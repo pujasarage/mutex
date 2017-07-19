@@ -1,17 +1,19 @@
 import java.io.*;
 class StringDemo	
 {
-	public static void main(string args[])
-	BufferedReader br = new BufferedReader(new InputStream(System.in));
+	public static void main(String args[]) throws Exception
+{
+	System.out.println("Enter string :");
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	String input=br.readLine();
-	String input=input.toUpperCase();
+	input=input.toUpperCase();
 	int consonentCount=getConsonentCount(input);
 	System.out.println("ConsonentCount :"+consonentCount);
 	int vowelCount=getVowelCount(input);
 	System.out.println("VowelCount :"+vowelCount);
 
-
-	Ststic bool isVowel(char ch)
+}
+	static boolean isVowel(char ch)
 	{
 		if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
 		{
@@ -22,26 +24,29 @@ class StringDemo
 	static int getConsonentCount(String input)
 	{
 	char inputArray[]=input.toCharArray();
-	int count=0;
-	for(char c:CharArray)
+	int cCount=0;
+	for(char c:inputArray)
 	{	
-		if(!isVowel())
+		if(!isVowel(c))
 		{
-			count++;
-		}//return count;
+			cCount++;
+		}
 	 	
 	}
+	return cCount;
 	}
 	static int getVowelCount(String input)
 	{
 	char inputArray[]=input.toCharArray();
 	int vCount=0;
-	for(char c:CharArray)
+	for(char c:inputArray)
 	{
-		if(isVowel())
+		if(isVowel(c))
 		{
-			count++;
+			vCount++;
 		}		
 	}
-	}//return count;
+	return vCount;
 }
+}
+
